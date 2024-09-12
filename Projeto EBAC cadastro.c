@@ -118,52 +118,67 @@ int main()
 {
     int opcao=0;  // definindo variáveis 
     int laco=1; // definindo repetição
+    char senhadigitada[]="a";
+    int comparacao;
     
-    for(laco=1;laco=1;)  // definindo ponto de retorno
+    printf("--- Banco de Dados EBAC ---\n\n");
+    printf("Login de administrador!\n\nDigite sua senha: ");
+    scanf("%s",senhadigitada);
+    
+    comparacao = strcmp(senhadigitada, "adminebac");
+    
+    if(comparacao == 0)
     {
-	
-		system("cls");  //resposável por limpar a tela
-	
-		setlocale(LC_ALL, "Portuguese");  // definindo a linguagem
     
-    	printf("--- Banco de Dados EBAC ---\n\n");  // início do menu
-    	printf("Por favor, escolha a opção desejada:\n\n");
-    	printf("\t1 - Cadastrar Aluno(a)\n");
-    	printf("\t2 - Consultar Aluno(a)\n");
-    	printf("\t3 - Excluir cadastro de Aluno(a)\n"); 
-		printf("\t4 - Sair do sistema\n\n");
-		printf("Opção: "); // fim do menu
-    
-    	scanf("%d" , &opcao);  // armazenando a escolha do usuário
-    
-    	system("cls");
-    
-    	switch(opcao)
+    	for(laco=1;laco=1;)  // definindo ponto de retorno
     	{
-    		case 1: // início da seleção
-    		registrar(); //chama de função
-			break;
+		
+			system("cls");  //resposável por limpar a tela
+		
+			setlocale(LC_ALL, "Portuguese");  // definindo a linguagem
+    	
+    		printf("--- Banco de Dados EBAC ---\n\n");  // início do menu
+    		printf("Por favor, escolha a opção desejada:\n\n");
+    		printf("\t1 - Cadastrar Aluno(a)\n");
+    		printf("\t2 - Consultar Aluno(a)\n");
+    		printf("\t3 - Excluir cadastro de Aluno(a)\n"); 
+			printf("\t4 - Sair do sistema\n\n");
+			printf("Opção: "); // fim do menu
+    	
+    		scanf("%d" , &opcao);  // armazenando a escolha do usuário
+    	
+    		system("cls");
+    	
+    		switch(opcao)
+    		{
+    			case 1: // início da seleção
+    			registrar(); //chama de função
+				break;
+				
+				case 2: 
+				consultar();
+				break;
+				
+				case 3:
+				excluir();
+				break;
 			
-			case 2: 
-			consultar();
-			break;
-			
-			case 3:
-			excluir();
-			break;
-			
-			case 4:
-			printf("Obrigado por utilizar o sistema!\n");
-			return 0;
-			break;
-			
-			default:
-			printf("Esta opção não está disponível.\n\n");
-			system("pause");
-			break;  // fim da seleção
+				case 4:
+				printf("Obrigado por utilizar o sistema!\n");
+				return 0;
+				break;
+				
+				default:
+				printf("Esta opção não está disponível.\n\n");
+				system("pause");
+				break;  // fim da seleção
+			}
 		}
-	
+		
 	}
 	
+		else
+		printf("Senha incorreta!");
+		
 }
 
